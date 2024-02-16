@@ -1,6 +1,4 @@
-version: '3.7'
-
-name: testy
+version: '3'
 
 services:
   testy-server:
