@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 	"strconv"
 	"sync"
@@ -25,12 +26,18 @@ func GetConfig() *Config {
 		if p := os.Getenv("PORT"); p != "" {
 			port, _ = strconv.Atoi(p)
 		}
+		log.Printf("port: %d\n", port)
+
 		if h := os.Getenv("HOST"); h != "" {
 			host = h
 		}
+		log.Printf("port: %d\n", port)
+
 		if v := os.Getenv("VERSION"); v != "" {
 			version = v
 		}
+		log.Printf("port: %d\n", port)
+
 		config = &Config{
 			version: version,
 			host:    host,

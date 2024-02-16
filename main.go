@@ -14,9 +14,9 @@ func main() {
 	versionServer.HandleFunc("/", getVersionHandler(config, serverChan))
 	go serveVersion(config, versionServer, serverChan)
 
-	helloServer := http.NewServeMux()
-	helloServer.HandleFunc("/", getHelloHandler(serverChan))
-	go serveHelloWorld(config, helloServer, serverChan)
+	//helloServer := http.NewServeMux()
+	//helloServer.HandleFunc("/", getHelloHandler(serverChan))
+	//go serveHelloWorld(config, helloServer, serverChan)
 
 	for e := range serverChan {
 		if e.err != nil {
@@ -58,11 +58,11 @@ func serveVersion(config *Config, mux *http.ServeMux, c chan<- ServerEvent) {
 	}
 }
 
-func serveHelloWorld(config *Config, mux *http.ServeMux, c chan<- ServerEvent) {
-	defer close(c)
-	c <- ServerEvent{msg: "server starting"}
-	err := http.ListenAndServe(config.host+":"+strconv.Itoa(config.port+1), mux)
-	if err != nil {
-		c <- ServerEvent{msg: "server went down", err: err}
-	}
-}
+//func serveHelloWorld(config *Config, mux *http.ServeMux, c chan<- ServerEvent) {
+//	defer close(c)
+//	c <- ServerEvent{msg: "server starting"}
+//	err := http.ListenAndServe(config.host+":"+strconv.Itoa(config.port+1), mux)
+//	if err != nil {
+//		c <- ServerEvent{msg: "server went down", err: err}
+//	}
+//}
