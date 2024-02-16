@@ -1,4 +1,9 @@
+version: '3'
+
 services:
   testy-server:
+    container_name: testy-server
     build: .
-
+    ports:
+      - "8080:8080"
+      - "8081:8081"
