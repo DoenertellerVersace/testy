@@ -7,3 +7,7 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
+    environment:
+      - PORT="8080"
+      - HOST="127.0.0.1"
+      - VERSION="1.6.9"
