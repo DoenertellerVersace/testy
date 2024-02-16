@@ -1,0 +1,15 @@
+version: '3.7'
+
+name: testy
+
+services:
+  testy-server:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - VERSION=0.6.9
+      - HOST=localhost
+      - PORT=8080
+
