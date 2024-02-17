@@ -9,5 +9,4 @@ services:
       - "8081:8081"
     environment:
       - PORT=8080
-      - HOST="localhost"
       - VERSION="1.6.9"
