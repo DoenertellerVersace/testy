@@ -1,5 +1,7 @@
 FROM golang:1.22-alpine
 
+LABEL name="testy-server"
+
 COPY . /go/src/testy
 WORKDIR /go/src/testy
 
