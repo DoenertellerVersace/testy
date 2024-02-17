@@ -27,16 +27,16 @@ func main() {
 	}
 }
 
-func getHelloHandler(serverChan chan ServerEvent) func(w http.ResponseWriter, r *http.Request) {
-	return func(w http.ResponseWriter, r *http.Request) {
-		i, err := w.Write([]byte("hello, world"))
-		if err != nil {
-			serverChan <- ServerEvent{msg: "failed to write response", err: err}
-		} else {
-			serverChan <- ServerEvent{msg: "wrote " + strconv.Itoa(i) + " bytes"}
-		}
-	}
-}
+//func getHelloHandler(serverChan chan ServerEvent) func(w http.ResponseWriter, r *http.Request) {
+//	return func(w http.ResponseWriter, r *http.Request) {
+//		i, err := w.Write([]byte("hello, world"))
+//		if err != nil {
+//			serverChan <- ServerEvent{msg: "failed to write response", err: err}
+//		} else {
+//			serverChan <- ServerEvent{msg: "wrote " + strconv.Itoa(i) + " bytes"}
+//		}
+//	}
+//}
 
 func getVersionHandler(config *Config, c chan<- ServerEvent) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
