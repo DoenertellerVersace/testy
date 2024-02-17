@@ -1,0 +1,10 @@
+name: testy-server
+
+type: "web"
+
+data:
+  applicationEnvironmentVariables:
+    - PORT: 8080
+    - VERSION: "1.6.9"
+
+version: '1.6.9'
