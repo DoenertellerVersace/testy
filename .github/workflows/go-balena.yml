@@ -1,0 +1,28 @@
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v4
+      with:
+        go-version: '1.22'
+        
+    - name: building go binary
+      run: go build -v ./...
+    - name: run tests
+      run: go test -v ./...
+      
+    - name: pushing to balena fleet
+      uses: theaccordance/balena-push@v1.1.1
+      with:
+        api-token: P3TZjomr2Ya2vHjqV4tEKzSh2BOZZ3b7
+        application-name: testy
