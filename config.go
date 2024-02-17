@@ -31,12 +31,12 @@ func GetConfig() *Config {
 		if h := os.Getenv("HOST"); h != "" {
 			host = h
 		}
-		log.Printf("port: %d\n", port)
+		log.Printf("host: %s\n", host)
 
 		if v := os.Getenv("VERSION"); v != "" {
 			version = v
 		}
-		log.Printf("port: %d\n", port)
+		log.Printf("version: %s\n", version)
 
 		config = &Config{
 			version: version,
