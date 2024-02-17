@@ -8,6 +8,6 @@ services:
       - "8080:8080"
       - "8081:8081"
     environment:
-      - PORT="8080"
-      - HOST="127.0.0.1"
+      - PORT=8080
+      - HOST="localhost"
       - VERSION="1.6.9"
