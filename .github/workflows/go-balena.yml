@@ -22,7 +22,7 @@ jobs:
       run: go test -v ./...
       
     - name: pushing to balena fleet
-      uses: theaccordance/balena-push@v1.1.1
+      uses: amingilani/push-to-balenacloud@v1.0.1
       with:
         api-token: P3TZjomr2Ya2vHjqV4tEKzSh2BOZZ3b7
         application-name: testy
