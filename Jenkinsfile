@@ -9,6 +9,6 @@ node {
     // https://jenkins.io/doc/pipeline/steps/workflow-basic-steps/#withenv-set-environment-variables
     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
         // Output will be something like "go version go1.19 darwin/arm64"
-        sh "go run ${root}/main.go"
+        sh "go run /var/jenkins_home/workspace/deploy-hello-world/main.go"
     }
 }
