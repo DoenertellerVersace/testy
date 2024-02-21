@@ -2,7 +2,7 @@
 node {
     // Ensure the desired Go version is installed on this agent,
     // using the name defined in the Global Tool Configuration
-    def root = tool type: 'go', name: '1.22'
+    def root = tool name:"go"
 
     // Export environment variables to pointing the Go installation;
     // the `PATH+X` syntax prepends an item to the existing `PATH`:
